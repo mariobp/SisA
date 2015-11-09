@@ -1,4 +1,4 @@
-#Sisa
+#SisA
 This is an Activity Manager software, it tracks the history of activities, allows filtering and  statistics keeping.
 It was developed with the purpose of being implemented in the University of Cartagena Colombia.
 
