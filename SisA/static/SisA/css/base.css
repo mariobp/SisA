@@ -1,0 +1,71 @@
+form ul:not([role="tablist"]), #form ul:not([role="tablist"]) {
+  border-collapse: collapse;
+  display: table;
+}
+form ul:not([role="tablist"]) li, #form ul:not([role="tablist"]) li {
+  list-style: none;
+  display: table-row;
+}
+form ul:not([role="tablist"]) li input, form ul:not([role="tablist"]) li label:first-child, form ul:not([role="tablist"]) li .label, form ul:not([role="tablist"]) li select, #form ul:not([role="tablist"]) li input, #form ul:not([role="tablist"]) li label:first-child, #form ul:not([role="tablist"]) li .label, #form ul:not([role="tablist"]) li select {
+  display: table-cell;
+  vertical-align: middle;
+  padding-right: 7px;
+  text-align: left;
+}
+form ul:not([role="tablist"]) li span, #form ul:not([role="tablist"]) li span {
+  display: block;
+  background: rgba(255, 255, 255, 0.8);
+}
+form ul:not([role="tablist"]) li span, #form ul:not([role="tablist"]) li span {
+  margin: 8px 0;
+}
+form ul:not([role="tablist"]) li span, #form ul:not([role="tablist"]) li span {
+  padding: 7px;
+  padding-left: 10px;
+}
+form ul:not([role="tablist"]) li .selector a, #form ul:not([role="tablist"]) li .selector a {
+  text-decoration: none;
+  color: #000;
+}
+form ul:not([role="tablist"]) li .selector h2, #form ul:not([role="tablist"]) li .selector h2 {
+  font-size: 15px;
+  color: white;
+}
+form ul:not([role="tablist"]) li .selector h2, #form ul:not([role="tablist"]) li .selector h2 {
+  padding: 10px 0;
+}
+form ul:not([role="tablist"]) li .selector-available .selector-filter label, form ul:not([role="tablist"]) li .selector-available .selector-filter [type="text"], #form ul:not([role="tablist"]) li .selector-available .selector-filter label, #form ul:not([role="tablist"]) li .selector-available .selector-filter [type="text"] {
+  display: inline-block;
+}
+form ul:not([role="tablist"]) li .selector-available .selector-filter [type="text"], #form ul:not([role="tablist"]) li .selector-available .selector-filter [type="text"] {
+  padding-left: 7px;
+}
+form ul:not([role="tablist"]) li .selector-available select, #form ul:not([role="tablist"]) li .selector-available select, form ul:not([role="tablist"]) li .selector select, #form ul:not([role="tablist"]) li .selector select, body #sheet header #user ul:not([role="tablist"]) li:last-child {
+  margin: 0;
+}
+form ul:not([role="tablist"]) li .selector-chooser li, #form ul:not([role="tablist"]) li .selector-chooser li {
+  border: none;
+}
+form ul:not([role="tablist"]) li .selector select, #form ul:not([role="tablist"]) li .selector select {
+  width: 270px !important;
+}
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+.list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+#herramientas{
+  display: block;
+  text-align: center;
+  width: 103%;
+}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title%}Docente{% endblock %}
+{% block script %}
+	<script type="text/javascript" src="{{ STATIC_URL }}SisA/js/jquery.steps.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}SisA/js/validacion.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}SisA/js/datepicker.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}actividades/js/registro.js"></script>
+{% endblock %}
+{% block css %}
+	<link rel="stylesheet" href="{{ STATIC_URL }}SisA/css/normalize.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}SisA/css/main.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}SisA/css/jquery.steps.css">
+{% endblock css %}
+{% block contenido %}
+<div>
+	<form action="{% url "docente"%}" id="form" method="POST">
+	        {% csrf_token %}
+			<h4>Cuenta</h4>
+			<fieldset>
+				<legend>Datos de usuario</legend>
+				<ul>
+					{{ formU.as_ul }}
+				</ul>
+				<p>(*) Campos Requeridos</p>
+			</fieldset>
+			<h4>Docente</h4>
+			<fieldset>
+				<legend>Datos del docente</legend>
+				<ul>
+					{{ form.as_ul }}
+				</ul>
+				<p>(*) Campos Requeridos</p>
+			</fieldset>
+	</form>
+</div>
+<div id="dialog"></div>
+<div class="modal hide" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-header">
+            <h1>Guardando..</h1>
+        </div>
+        <div class="modal-body">
+            <div class="progress progress-striped active">
+                <div class="bar" style="width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

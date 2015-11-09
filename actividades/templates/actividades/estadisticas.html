@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block title%}Estadisticas{% endblock %}
+{% block script %}
+	<script type="text/javascript" src="{{ STATIC_URL }}SisA/js/highcharts.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}SisA/js/highcharts-3d.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}SisA/js/exporting.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}actividades/js/estadistica.js"></script>
+{% endblock %}
+{% block css %}
+{% endblock css %}
+{% block contenido %}
+	<div class="span6">
+        <div class="widget">
+            <div class="widget-header">
+                <i class="icon-bar-chart"></i>
+                <h3>
+                	Gráfico de circular por Asignatura
+                </h3>
+                </div>
+                            <!-- /widget-header -->
+            <div class="widget-content">
+                <div id="pie" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+            </div>
+                            <!-- /widget-content -->
+        </div>
+        <div class="widget">
+            <div class="widget-header">
+                <i class="icon-bar-chart"></i>
+                <h3>
+                    Gráfico de circular por Año y Periodo</h3>
+                </div>
+                            <!-- /widget-header -->
+            <div class="widget-content">
+                <ul class="list-inline list-unstyled">
+                    <li>
+                        <label for="Año1_1">Año desde:</label>
+                        <select name="año" id="Año1_1">
+                            <option value="0">---</option>
+                            {% for a in anio %}
+                                <option value="{{ a.anio }}">{{ a.anio }}</option>
+                            {% endfor %}
+                        </select>
+                    </li>
+                    <li>
+                        <label for="Año2_1">Año hasta:</label>
+                        <select name="año" id="Año2_1" disabled>
+                            <option value="0">---</option>
+                            {% for a in anio %}
+                                <option value="{{ a.anio }}">{{ a.anio }}</option>
+                            {% endfor %}
+                        </select>
+                    </li>
+                    <li>
+                        <label for="Periodo1">Periodo</label>
+                        <select name="periodo" id="Periodo1">
+                            <option value="0">---</option>
+                            <option value="1">Primer Periodo</option>
+                            <option value="2">Segundo Periodo</option>
+                        </select>
+                    </li>
+                </ul>
+   				<div id="pieAño" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+            </div>
+                            <!-- /widget-content -->
+        </div>
+    </div>    
+	<div class="span6">
+        <div class="widget">
+            <div class="widget-header">
+                <i class="icon-bar-chart"></i>
+                <h3>
+                	Gráfico de barra por Asignatura
+                </h3>
+                </div>
+                            <!-- /widget-header -->
+            <div class="widget-content">
+    			<div id="columna" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+            </div>
+                            <!-- /widget-content -->
+        </div>
+        <div class="widget">
+            <div class="widget-header">
+                <i class="icon-bar-chart"></i>
+                <h3>
+                
+                    Gráfico de barra por Año y Periodo.
+                </h3>
+                </div>
+                            <!-- /widget-header -->
+            <div class="widget-content">
+                <ul class="list-inline list-unstyled">
+                    <li>
+                        <label for="Año1_2">Año desde:</label>
+                        <select name="año" id="Año1_2">
+                            <option value="0">---</option>
+                            {% for a in anio %}
+                                <option value="{{ a.anio }}">{{ a.anio }}</option>
+                            {% endfor %}
+                        </select>
+                    </li>
+                    <li>
+                        <label for="Año2_2">Año hasta:</label>
+                        <select name="año" id="Año2_2" disabled>
+                            <option value="0">---</option>
+                            {% for a in anio %}
+                                <option value="{{ a.anio }}">{{ a.anio }}</option>
+                            {% endfor %}
+                        </select>
+                    </li>
+                    <li>
+                        <label for="Periodo2">Periodo</label>
+                        <select name="periodo" id="Periodo2">
+                            <option value="0">---</option>
+                            <option value="1">Primer Periodo</option>
+                            <option value="2">Segundo Periodo</option>
+                        </select>
+                    </li>
+                </ul>
+   				<div id="columnaAño" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+            </div>
+                            <!-- /widget-content -->
+        </div>
+    </div>  
+{% endblock %}

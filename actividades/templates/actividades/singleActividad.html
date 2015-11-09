@@ -1,0 +1,83 @@
+<div style="overflow: scroll">
+	<dl class="list-unstyled dl-horizontal">
+		<dt>Nombre:</dt>
+		<dd>{{ actividad.nombre }}</dd>
+		<dt>Tipo:</dt>
+		<dd>{{ actividad.tipo.nombre }}</dd>
+		<dt>Año:</dt>
+		<dd>{{ actividad.anio }}</dd>
+		<dt>Periodo:</dt>
+		<dd>{{ actividad.periodo }}</dd>
+		<dt>Jefe:</dt>
+		<dd>{{ actividad.jefe.nombre}} {{ actividad.jefe.apellidos }}</dd>
+		<dt>Objetivo:</dt>
+		<dd>{{ actividad.objetivo }}</dd>
+		<dt>Fotos</dt>
+		<dd>
+		    {% if foto %}
+				{% for t in foto %}
+				<a onClick="window.open(this.href, this.target, 'width=1024,height=720'); return false;"
+                   href="/media/{{ t.imagen }}"><i class="icon-picture"></i></a>
+				{% endfor %}
+			{% else %}
+				No tiene fotos.
+			{% endif %}
+		</dd>
+		<dt>Soportes:</dt>
+		<dd>
+		    {% if soporte %}
+			    {% for s in soporte%}
+				<a onClick="window.open(this.href, this.target, 'width=1024,height=720'); return false;"
+	                   href="/media/{{ s.archivo}}"><i class="icon-folder-open"></i></a>
+	            {% endfor %}
+			{% else %}
+				No tiene soportes.
+			{% endif %}	
+		</dd>
+		<dt>Documentos:</dt>
+		<dd>
+		    {% if documento %}
+				{% for d in documento %}
+				<a onClick="window.open(this.href, this.target, 'width=1024,height=720'); return false;"
+	                   href="/media/{{ d.archivo}}"><i class="icon-book"></i></a>
+				{% endfor %}
+			{% else %}
+				No tiene documentos.
+			{% endif %}
+		</dd>
+		<dt>Asignaturas:
+		    <dd>
+    		  <ul class="list-unstyled">
+    				{% for a in actividad.asignatura.all %}
+    					<li>
+    						<dl class="dl-horizontal">
+    							<dt>
+    								Asignatura:
+    							</dt>
+    							<dd>
+    							    {{ a.progacademica.asignatura.nombre }}
+    							</dd>
+    							<dt>
+    							    Docente: 
+    							</dt>
+    							<dd>
+    							    {{ a.docente.nombre }}{{a.apellidos }}
+    							</dd>
+    							<dt>
+    								Estudiantes: 
+    							</dt>
+    							<dd>
+    							    <ol class="">
+    									{% for e in a.estudiantes.all %}
+    										<li>{{ e.apellidos }} {{ e.nombre }} </li>
+    									{% endfor %}
+    								</ol>
+    							</dd>
+    						</dl>
+    					</li>
+    				{%  endfor %}		
+    			</ul>
+		    </dd>
+		</dt>
+	</dl>
+</div>
